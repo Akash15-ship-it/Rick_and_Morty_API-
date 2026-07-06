@@ -13,7 +13,7 @@ const auth = async(req,res,next)=>{
             })
         }
 
-        const decode = jwt.verify(token,"jwtexample")
+        const decode = jwt.verify(token,"hvnex1hJ3FtQ•••••••••••••••••••hTxRBKf2hGl4")
 
        req.user = decode.id
         next();

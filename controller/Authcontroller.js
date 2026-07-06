@@ -68,7 +68,7 @@ try{
         {
             id:user._id
         },
-        "jwtexample",
+        "hvnex1hJ3FtQ•••••••••••••••••••hTxRBKf2hGl4",
         {
            expiresIn:"5d"
         }

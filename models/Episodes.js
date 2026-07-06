@@ -13,8 +13,9 @@ const Episodeschema=mongoose.Schema({
     ecode:{
         type:String
     },
-    characters:{
-        type:Array
+    characters:[{
+        type:String
     }
+]
 })
 module.exports=mongoose.model("Episodedetials",Episodeschema)

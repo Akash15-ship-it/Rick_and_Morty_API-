@@ -6,7 +6,7 @@ const {addchar,getall,getbyid,putchar,delchar}=require("../controller/Charcontro
 
 router.post("/character/add",addchar)
 
-router.get('/character',getall)
+router.get('/character',auth,getall)
 router.get('/character/:id',getbyid)
 router.put('/character/:id',putchar)
 router.delete("/character/:id",delchar)
