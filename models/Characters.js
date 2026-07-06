@@ -23,9 +23,11 @@ const Characterschema=mongoose.Schema({
     location:{
         type:String
     },
-    episodes:{
-        type:Array
-    }
+    episodes:[
+        {
+            type:String
+        }
+    ]
 
 })
 module.exports=mongoose.model("Characterdetails",Characterschema)

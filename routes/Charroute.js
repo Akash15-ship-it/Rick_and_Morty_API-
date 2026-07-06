@@ -4,7 +4,7 @@ const auth=require("../middleware/Authmiddleware")
 const {addchar,getall,getbyid,putchar,delchar}=require("../controller/Charcontroller")
 
 
-router.post("/charcter/add",addchar)
+router.post("/character/add",addchar)
 
 router.get('/character',getall)
 router.get('/character/:id',getbyid)

@@ -1,4 +1,5 @@
 const Character=require("../models/Characters")
+const express=require("express")
 exports.addchar=async(req,res)=>{
     try{
       const character=await Character.create({
@@ -16,7 +17,10 @@ exports.addchar=async(req,res)=>{
         data:character
       })
     }catch(err){
-        console.log(err)
+       res.status(405).json({
+        message:err.message,
+        err
+       })
     }
 }
 exports.getall=async (req,res)=>{
@@ -32,7 +36,7 @@ res.status(200).json({
 }
 exports.getbyid=async (req,res)=>{
     try{
-   const character=await Character.findById(req.params.id)
+   const character=await Character.find({"id":req.params.id})
    res.status(200).json({
     data:character
    })
@@ -42,11 +46,11 @@ exports.getbyid=async (req,res)=>{
 }
 exports.putchar=async (req,res)=>{
     try{
-    const character=await Character.findByIdUpdate(
-        req.params.id,
+    const character=await Character.updateOne(
+        {"id":req.params.id},
         req.body,
         {
-            new:true,
+
             runValidators:true,
         })
         res.status(200).json({
@@ -59,7 +63,7 @@ exports.putchar=async (req,res)=>{
 }
 exports.delchar=async (req,res)=>{
 try{
-    const character=await Character.findByIdAndDelete(req.params.id)
+    const character=await Character.deleteOne({"id":req.params.id})
     res.status(200).json({
         message:"data deleted",
     })
